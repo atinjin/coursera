@@ -12,12 +12,13 @@ public class Sorting {
         int s = 0;
         for (int i = l + 1; i <= r; i++) {
             if (a[i] <= x) {
+                if(a[i] == x)
+                        s++;
                 j++;
                 int t = a[i];
                 a[i] = a[j];
                 a[j] = t;
-                if(a[i] == x)
-                        s++;
+                
             }
         }
         int t = a[l];
@@ -102,4 +103,3 @@ public class Sorting {
         }
     }
 }
-
