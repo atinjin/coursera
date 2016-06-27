@@ -13,22 +13,23 @@ public class MajorityElement {
         int cand = 0;
         int count = 0;
         for(int n=1; n<a.length; n++) {
-            if(a[cand] == a[n])
+           if(count == 0) {
+                    cand = n;
+                    count = 1;
+            } else if(a[cand] == a[n])
                     count++;
             else
                     count--;
-            if(count == 0) {
-                    cand = n;
-                    count = 0;
-            }
+            
         }
 
+        count = 0;
         for(int n=0; n<a.length; n++) {
             if(a[n] == a[cand])
                     count++;
         }
         
-        if(count > a.length/2)
+        if(count > (a.length/2))
           return 1;
         else
           return -1;
@@ -75,4 +76,3 @@ public class MajorityElement {
         }
     }
 }
-
